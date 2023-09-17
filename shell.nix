@@ -2,20 +2,20 @@
   programs.bash = {
     shellInit = ''
       function git_sync_and_branch {
-        local readonly TARGET_BRANCH="$1"
-        local readonly MAIN_BRANCH='master'
+        local readonly TARGET_BRANCH="''$1"
+        local readonly MAIN_BRANCH="master"
 
-        git checkout "${MAIN_BRANCH}" && \
-          git pull origin "${MAIN_BRANCH}" && \
-          if [[ -n "${TARGET_BRANCH}" ]]; then
-            git checkout -b "${TARGET_BRANCH}"
+        git checkout "''${MAIN_BRANCH}" && \
+          git pull origin "''${MAIN_BRANCH}" && \
+          if [[ -n "''$TARGET_BRANCH" ]]; then
+            git checkout -b "''${TARGET_BRANCH}"
           fi
       }
 
       function git_commit_and_push {
-        local readonly COMMIT_MESSAGE="$1"
+        local readonly COMMIT_MESSAGE="''$1"
 
-        git commit --message "${COMMIT_MESSAGE}" && \
+        git commit --message "''${COMMIT_MESSAGE}" && \
           git push
       }
       '';
@@ -46,7 +46,7 @@
       au = "sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove -y";
       a = ". ./venv/bin/activate";
       td = "pushd $(mktemp -d)";
-      ttt = "echo 'the test triumphed x3!'";
+      ttt = "echo 'the test triumphed!'";
     };
   };
 }
