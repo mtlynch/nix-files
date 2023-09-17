@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   programs.bash = {
     shellInit = ''
