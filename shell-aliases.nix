@@ -28,6 +28,6 @@
     au = "sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove -y";
     a = ". ./venv/bin/activate";
     td = "pushd $(mktemp -d)";
-    ttt = "echo 'the test triumphed!'"
+    ttt = "echo 'the test triumphed!'";
   };
 }
