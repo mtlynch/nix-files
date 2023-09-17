@@ -3,11 +3,11 @@
     shellInit = ''
       function git_sync_and_branch {
         local readonly TARGET_BRANCH="''$1"
-        local readonly MAIN_BRANCH="master"
+        local readonly MAIN_BRANCH='master'
 
         git checkout "''${MAIN_BRANCH}" && \
           git pull origin "''${MAIN_BRANCH}" && \
-          if [[ -n "''$TARGET_BRANCH" ]]; then
+          if [[ -n "''${TARGET_BRANCH}" ]]; then
             git checkout -b "''${TARGET_BRANCH}"
           fi
       }
