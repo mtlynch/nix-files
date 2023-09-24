@@ -22,10 +22,6 @@
       # Expand bash history tracking.
       shopt -s histappend
       export HISTSIZE=10000
-
-      # Enable partial history search.
-      "\e[A": history-search-backward
-      "\e[B": history-search-forward
       '';
     shellAliases = {
       gau = "git add --update";
