@@ -18,6 +18,14 @@
         git commit --message "''${COMMIT_MESSAGE}" && \
           git push
       }
+
+      # Expand bash history tracking.
+      shopt -s histappend
+      export HISTSIZE=10000
+
+      # Enable partial history search.
+      "\e[A": history-search-backward
+      "\e[B": history-search-forward
       '';
     shellAliases = {
       gau = "git add --update";
@@ -46,7 +54,6 @@
       au = "sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove -y";
       a = ". ./venv/bin/activate";
       td = "pushd $(mktemp -d)";
-      ttt = "echo 'the test triumphed!'";
     };
   };
 }
